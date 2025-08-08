@@ -7,7 +7,6 @@
   <meta name="description" content="Interventions rapides en électronique embarquée et conception PCB. Auto, moto, ULM/avion léger, RC. Concepteur PCB & réparation carte électronique." />
   <link rel="canonical" href="https://www.rcmtech.fr/" />
   <meta name="robots" content="index,follow" />
-
   <style>
     :root{
       --bg:#0a0a0a; --card:#141414; --text:#fafafa;
@@ -51,22 +50,16 @@
     .cards{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
     .card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;
       padding:16px;box-shadow:var(--shadow)}
-    .card img{width:100%;height:200px;object-fit:cover;border-radius:12px;margin-bottom:10px;border:1px solid rgba(255,255,255,.06)}
+    .card .media{width:100%;height:200px;border-radius:12px;margin-bottom:10px;border:1px solid rgba(255,255,255,.06);overflow:hidden}
+    .card .media img{width:100%;height:100%;object-fit:cover;display:block}
     .card h3{margin:4px 0 6px}
     .grid-2{display:grid;grid-template-columns:1fr 1fr;gap:18px}
-    .bullets{padding-left:18px}
-    .bullets li{margin:6px 0}
-    .contact-grid{display:grid;grid-template-columns:1.2fr .8fr;gap:18px}
-    .contact-card{background:var(--card);border:1px solid rgba(255,255,255,.06);border-radius:16px;padding:18px;box-shadow:var(--shadow)}
-    .form{display:grid;gap:12px}
-    .input, textarea{width:100%;padding:12px 14px;border-radius:12px;background:#0f0f0f;border:1px solid rgba(255,255,255,.12);color:var(--text)}
-    textarea{min-height:140px;resize:vertical}
     footer{background:#0a0a0a;border-top:1px solid rgba(255,255,255,.06);padding:28px 0}
     .foot{display:grid;grid-template-columns:2fr 1fr 1fr 1fr;gap:18px}
     .foot-list{list-style:none;padding:0;margin:0}
     .foot-list li{margin:6px 0}
     @media (max-width:980px){
-      .hero-grid,.grid-2,.foot,.contact-grid{grid-template-columns:1fr}
+      .hero-grid,.grid-2,.foot{grid-template-columns:1fr}
       .cards{grid-template-columns:1fr}
       nav ul{display:none}
     }
@@ -76,17 +69,22 @@
   <header>
     <div class="container nav">
       <a href="#top" class="brand">
-        <img src="logo/logo-rcmtech.png" alt="rcmtech" width="40" height="40" />
+        <picture>
+          <!-- Garde la/les lignes qui correspondent à tes fichiers réels -->
+          <source srcset="./assets/logo/logo-rcmtech.avif" type="image/avif">
+          <source srcset="./assets/logo/logo-rcmtech.webp" type="image/webp">
+          <img src="./assets/logo/logo-rcmtech.png" alt="RCM Tech" width="40" height="40" />
+        </picture>
         <h1>RCM Tech France</h1>
       </a>
       <nav>
         <ul>
           <li><a href="#services">Services</a></li>
           <li><a href="#secteurs">Secteurs</a></li>
-          <li><a href="#contact">Contact</a></li>
+          <li><a href="contact.html">Contact</a></li><!-- lien vers page dédiée -->
         </ul>
       </nav>
-      <a class="cta" href="#chat" data-chat>Parler à un technicien</a>
+      <a class="cta" href="contact.html">Parler à un technicien</a>
     </div>
   </header>
 
@@ -98,12 +96,16 @@
           <h2>Électronique embarquée & PCB — rapide, fiable</h2>
           <p>Auto, moto, ULM/avion léger, RC. Intervention prioritaire sur matériel maîtrisé pour un délai court et une qualité constante.</p>
           <div class="actions">
-            <a class="cta" href="#chat" data-chat>Parler à un technicien</a>
-            <a class="cta alt" href="#contact">Contact</a>
+            <a class="cta" href="contact.html">Parler à un technicien</a>
+            <a class="cta alt" href="contact.html">Contact</a>
           </div>
         </div>
         <div class="hero-card">
-          <img class="hero-img" src="images/hero/hero-visuel.svg" alt="Illustration carte électronique" />
+          <picture>
+            <source srcset="./assets/images/hero/hero-visuel.avif" type="image/avif">
+            <source srcset="./assets/images/hero/hero-visuel.webp" type="image/webp">
+            <img class="hero-img" src="./assets/images/hero/hero-visuel.jpg" alt="Illustration carte électronique">
+          </picture>
         </div>
       </div>
     </section>
@@ -114,17 +116,35 @@
         <h2 class="section-title">Services</h2>
         <div class="cards">
           <article class="card">
-            <img src="images/services/conception-pcb/visuel.jpg" alt="Conception PCB" />
+            <div class="media">
+              <picture>
+                <source srcset="./assets/images/services/conception-pcb/visuel.avif" type="image/avif">
+                <source srcset="./assets/images/services/conception-pcb/visuel.webp" type="image/webp">
+                <img src="./assets/images/services/conception-pcb/visuel.jpg" alt="Conception PCB" />
+              </picture>
+            </div>
             <h3>Conception PCB</h3>
             <p>Analogique, numérique, RF. Gerber prêts à produire.</p>
           </article>
           <article class="card">
-            <img src="images/services/depannage-embarque/visuel.jpg" alt="Dépannage embarqué" />
+            <div class="media">
+              <picture>
+                <source srcset="./assets/images/services/depannage-embarque/visuel.avif" type="image/avif">
+                <source srcset="./assets/images/services/depannage-embarque/visuel.webp" type="image/webp">
+                <img src="./assets/images/services/depannage-embarque/visuel.jpg" alt="Dépannage embarqué" />
+              </picture>
+            </div>
             <h3>Dépannage embarqué</h3>
             <p>Cartes auto/moto, ULM léger, RC, CNC.</p>
           </article>
           <article class="card">
-            <img src="images/services/protos/visuel.jpg" alt="Prototypage" />
+            <div class="media">
+              <picture>
+                <source srcset="./assets/images/services/protos/visuel.avif" type="image/avif">
+                <source srcset="./assets/images/services/protos/visuel.webp" type="image/webp">
+                <img src="./assets/images/services/protos/visuel.jpg" alt="Prototypage" />
+              </picture>
+            </div>
             <h3>Protos & petites séries</h3>
             <p>Assemblage rapide, tests, jigs.</p>
           </article>
@@ -137,7 +157,7 @@
       <div class="container grid-2">
         <div>
           <h2 class="section-title">Secteurs</h2>
-          <ul class="bullets">
+          <ul>
             <li><strong>Auto/Moto</strong> : ECU, capteurs, télémétrie.</li>
             <li><strong>ULM / Avion léger</strong> : avionique légère non certifiée.</li>
             <li><strong>RC & Drones</strong> : contrôleurs, VTX/RX.</li>
@@ -146,42 +166,12 @@
         </div>
         <div>
           <h2 class="section-title">Pourquoi nous</h2>
-          <ul class="bullets">
+          <ul>
             <li>Matériel connu ⇒ délai court.</li>
             <li>Devis clair, communication simple.</li>
             <li>Qualité mesurable, suivi.</li>
           </ul>
         </div>
-      </div>
-    </section>
-
-    <!-- CONTACT intégré -->
-    <section id="contact" class="container contact-section">
-      <h2 class="section-title">Contactez-nous</h2>
-      <p class="muted">Formulaire ou chat en ligne — réponse rapide.</p>
-      <div class="contact-grid">
-        <div class="contact-card">
-          <form class="form" name="contact" method="post" data-netlify="true" netlify-honeypot="bot-field">
-            <input type="hidden" name="form-name" value="contact" />
-            <p class="hidden"><label>Ne pas remplir: <input name="bot-field" /></label></p>
-            <label>Nom <input class="input" type="text" name="name" required></label>
-            <label>Email <input class="input" type="email" name="email" required></label>
-            <label>Téléphone (optionnel) <input class="input" type="tel" name="phone"></label>
-            <label>Message <textarea class="input" name="message" required></textarea></label>
-            <div class="actions">
-              <button class="cta" type="submit">Envoyer</button>
-              <button class="cta alt" type="button" data-chat>Parler à un technicien</button>
-            </div>
-          </form>
-        </div>
-        <aside class="contact-card">
-          <h3>Devis express</h3>
-          <ul class="bullets">
-            <li>Référence exacte</li>
-            <li>Symptômes / codes</li>
-            <li>2–3 photos nettes</li>
-          </ul>
-        </aside>
       </div>
     </section>
   </main>
@@ -190,7 +180,10 @@
     <div class="container foot">
       <div>
         <a class="brand" href="#top">
-          <img src="logo/logo-rcmtech.svg" alt="RCM Tech France" width="28" height="28" />
+          <picture>
+            <source srcset="./assets/logo/logo-rcmtech.svg" type="image/svg+xml">
+            <img src="./assets/logo/logo-rcmtech.png" alt="RCM Tech France" width="28" height="28" />
+          </picture>
           <h4>RCM Tech France</h4>
         </a>
         <p class="muted">© <span id="year"></span> RCM Tech France</p>
@@ -221,25 +214,6 @@
 
   <script>
     document.getElementById('year').textContent = new Date().getFullYear();
-    function openChat(e){
-      if(e) e.preventDefault();
-      if (window.Tawk_API && typeof Tawk_API.maximize === 'function') {
-        Tawk_API.maximize();
-      } else {
-        setTimeout(function(){
-          if (window.Tawk_API && typeof Tawk_API.maximize === 'function') Tawk_API.maximize();
-        }, 700);
-      }
-    }
-    document.addEventListener('click', function(e){
-      const trigger = e.target.closest('[data-chat]');
-      if (trigger) openChat(e);
-    });
-    window.Tawk_API = window.Tawk_API || {};
-    Tawk_API.onLoad = function () {
-      if (new URLSearchParams(location.search).get('chat') === '1') Tawk_API.maximize();
-    };
   </script>
 </body>
 </html>
-
